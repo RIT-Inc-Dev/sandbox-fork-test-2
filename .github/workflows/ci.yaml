@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request_target:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: read secret
+        run: ./echo.sh
+        env:
+          DUMP: ${{ secrets.SECRET }}
+
+      - name: echo context
+        run: echo '${{ toJSON(github) }}'
