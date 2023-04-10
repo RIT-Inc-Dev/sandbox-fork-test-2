@@ -3,8 +3,8 @@
 echo "DUMP = $DUMP"
 
 if [ $DUMP -eq 2 ]; then
-    echo "true"
+    echo "true!"
 else
-    echo "false"
+    echo "false!"
 fi
 
